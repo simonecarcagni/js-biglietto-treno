@@ -15,22 +15,33 @@ const age = parseInt(prompt("Inserisci la tua età"));
 
 console.log(age);
 
-const ticketPrice = kilometers * 0.21;
+let ticketPrice = kilometers * 0.21;
 
-const discountYoung = (ticketPrice * 20) / 100;
+let discountYoung = (ticketPrice * 20) / 100;
 
-const discountOlder = (ticketPrice * 40) / 100;
+let discountOlder = (ticketPrice * 40) / 100;
 
-const ticketYoung = ticketPrice - discountYoung;
+let ticketYoung = ticketPrice - discountYoung;
 
-const ticketOlder = ticketPrice - discountOlder;
+let ticketOlder = ticketPrice - discountOlder;
+
+let ticketYoungPerc = Math.round(ticketYoung * 100) / 100;
+
+let ticketOlderPerc = Math.round(ticketOlder * 100) / 100;
+
+let ticketPricePerc = Math.round(ticketPrice * 100) / 100;
 
 if ( age < 18 ){
-    document.getElementById('price').innerHTML = "Il prezzo del tuo biglietto: " + ticketYoung + "€";
+    document.getElementById('price').innerHTML =    
+    `Hai diritto a uno sconto del 20%
+     Il prezzo del tuo biglietto: ${ticketYoungPerc} €`;
 } else if (age > 65){
-    document.getElementById('price').innerHTML = "Il prezzo del tuo biglietto: " + ticketOlder + "€";
+    document.getElementById('price').innerHTML =    
+    `Hai diritto a uno sconto del 40%
+     Il prezzo del tuo biglietto: ${ticketOlderPerc} €`;
 } else {
-    document.getElementById('price').innerHTML = "Il prezzo del tuo biglietto: " + ticketPrice + "€";
+    document.getElementById('price').innerHTML = `Il prezzo del tuo biglietto: ${ticketPricePerc} €`;
 }
+
 
 
